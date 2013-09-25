@@ -15,5 +15,7 @@
 		<key>type</key>
 		<integer>8</integer>
 	</dict>
+	<key>showClock</key>
+	<false/>
 </dict>
 </plist>
