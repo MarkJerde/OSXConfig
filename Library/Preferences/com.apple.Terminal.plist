@@ -30,6 +30,8 @@
 	<string>178 287 865 350 0 0 1440 878 </string>
 	<key>NSWindow Frame TTWindow Pro</key>
 	<string>0 75 1424 803 0 0 1440 878 </string>
+	<key>NSWindow Frame TTWindow Pro Off</key>
+	<string>-63 900 1592 1200 -63 900 1600 1200 </string>
 	<key>NSWindow Frame TTWindow test</key>
 	<string>178 271 505 366 0 0 1440 878 </string>
 	<key>PMPrintingExpandedStateForPrint</key>
@@ -1676,6 +1678,103 @@
 			<true/>
 			<key>name</key>
 			<string>Pro</string>
+			<key>rowCount</key>
+			<integer>26</integer>
+			<key>shellExitAction</key>
+			<integer>1</integer>
+			<key>type</key>
+			<string>Window Settings</string>
+		</dict>
+		<key>Pro Off</key>
+		<dict>
+			<key>BackgroundBlur</key>
+			<real>0.0</real>
+			<key>BackgroundColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VXTlNXaGl0ZYACEANHMCAwLjUxANIQERIT
+			WiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09iamVj
+			dF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FI
+			T1xkZmhwdYCJkZSdr7K3AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAA
+			AAAAAAAAALk=
+			</data>
+			<key>Bell</key>
+			<false/>
+			<key>CursorColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VXTlNXaGl0ZYACEANLMC4zMDI0MTkzNgDS
+			EBESE1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNP
+			YmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0y
+			NztBSE9cZGZodHmEjZWYobO2uwAAAAAAAAEBAAAAAAAAABkAAAAA
+			AAAAAAAAAAAAAAC9
+			</data>
+			<key>Font</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKQHCBESVSRudWxs1AkKCwwNDg8QViRj
+			bGFzc1ZOU05hbWVWTlNTaXplWE5TZkZsYWdzgAOAAiNAOAAAAAAA
+			ABAQVk1vbmFjb9ITFBUWWiRjbGFzc25hbWVYJGNsYXNzZXNWTlNG
+			b250ohUXWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hpdmVy0RobVHJv
+			b3SAAQgRGiMtMjc8QktSWWBpa212eH+Ej5ifoqu9wMUAAAAAAAAB
+			AQAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAxw==
+			</data>
+			<key>FontAntialias</key>
+			<false/>
+			<key>FontWidthSpacing</key>
+			<real>0.99596774193548387</real>
+			<key>Linewrap</key>
+			<true/>
+			<key>ProfileCurrentVersion</key>
+			<real>2.02</real>
+			<key>SelectionColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VXTlNXaGl0ZYACEANLMC4yNTQwMzIyNQDS
+			EBESE1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNP
+			YmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0y
+			NztBSE9cZGZodHmEjZWYobO2uwAAAAAAAAEBAAAAAAAAABkAAAAA
+			AAAAAAAAAAAAAAC9
+			</data>
+			<key>ShouldLimitScrollback</key>
+			<integer>1</integer>
+			<key>ShowDimensionsInTitle</key>
+			<true/>
+			<key>ShowWindowSettingsNameInTitle</key>
+			<false/>
+			<key>TextBoldColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VXTlNXaGl0ZYACEANCMQDSEBESE1okY2xh
+			c3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9O
+			U0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE9cZGZo
+			a3B7hIyPmKqtsgAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAA
+			AAC0
+			</data>
+			<key>TextColor</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFz
+			c1xOU0NvbG9yU3BhY2VXTlNXaGl0ZYACEANLMC45NDc1ODA2NADS
+			EBESE1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNP
+			YmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0y
+			NztBSE9cZGZodHmEjZWYobO2uwAAAAAAAAEBAAAAAAAAABkAAAAA
+			AAAAAAAAAAAAAAC9
+			</data>
+			<key>UseBrightBold</key>
+			<true/>
+			<key>VisualBell</key>
+			<true/>
+			<key>columnCount</key>
+			<integer>101</integer>
+			<key>deleteSendsBackspace</key>
+			<true/>
+			<key>name</key>
+			<string>Pro Off</string>
 			<key>rowCount</key>
 			<integer>26</integer>
 			<key>shellExitAction</key>
