@@ -4,12 +4,13 @@
 <dict>
 	<key>2.0 time upgrade</key>
 	<true/>
+	<key>CPUDisplayMode</key>
+	<string>0</string>
+	<key>CPUMultiple</key>
+	<integer>0</integer>
 	<key>ClockDisplayMode</key>
 	<array>
 		<string>___ICON__RED___</string>
-		<string>hh</string>
-		<string>:</string>
-		<string>mm</string>
 	</array>
 	<key>DiskActivityArrowRead</key>
 	<data>
@@ -43,8 +44,21 @@
 	dF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FIT1xiZGZtcn2GjpGa
 	rK+0AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALY=
 	</data>
+	<key>DiskDisplayMode</key>
+	<string>2</string>
 	<key>DonateShownV2.0</key>
 	<true/>
+	<key>SensorsDisplayMode</key>
+	<string>0</string>
+	<key>SensorsMenubar</key>
+	<array>
+		<string>TB0T</string>
+		<string>F0Ac</string>
+		<string>F1Ac</string>
+		<string>TC0D</string>
+	</array>
+	<key>UseMono</key>
+	<integer>0</integer>
 	<key>WorldClockDisplayMode</key>
 	<array>
 		<string>hh</string>
@@ -52,6 +66,14 @@
 		<string>mm</string>
 		<string> </string>
 		<string>a</string>
+	</array>
+	<key>cities</key>
+	<array>
+		<integer>1221</integer>
+		<integer>1380</integer>
+		<integer>1234</integer>
+		<integer>8883</integer>
+		<integer>8787</integer>
 	</array>
 	<key>migration 2.0</key>
 	<true/>
