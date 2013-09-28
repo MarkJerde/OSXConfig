@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>2.0 time upgrade</key>
+	<true/>
+	<key>ClockDisplayMode</key>
+	<array>
+		<string>___ICON__RED___</string>
+		<string>hh</string>
+		<string>:</string>
+		<string>mm</string>
+	</array>
+	<key>DiskActivityArrowRead</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFzc1xOU0NvbG9yU3BhY2VVTlNSR0KAAhAB
+	RjAgMSAwANIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09iamVj
+	dF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FIT1xiZGZtcn2GjpGa
+	rK+0AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALY=
+	</data>
+	<key>DiskActivityArrowWrite</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFzc1xOU0NvbG9yU3BhY2VVTlNSR0KAAhAB
+	RjEgMCAwANIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09iamVj
+	dF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FIT1xiZGZtcn2GjpGa
+	rK+0AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALY=
+	</data>
+	<key>DiskActivityReadGraphColor</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFzc1xOU0NvbG9yU3BhY2VVTlNSR0KAAhAB
+	RjAgMSAwANIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09iamVj
+	dF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FIT1xiZGZtcn2GjpGa
+	rK+0AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALY=
+	</data>
+	<key>DiskActivityWriteGraphColor</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OViRjbGFzc1xOU0NvbG9yU3BhY2VVTlNSR0KAAhAB
+	RjEgMCAwANIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09iamVj
+	dF8QD05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FIT1xiZGZtcn2GjpGa
+	rK+0AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAALY=
+	</data>
+	<key>DonateShownV2.0</key>
+	<true/>
+	<key>WorldClockDisplayMode</key>
+	<array>
+		<string>hh</string>
+		<string>:</string>
+		<string>mm</string>
+		<string> </string>
+		<string>a</string>
+	</array>
+	<key>migration 2.0</key>
+	<true/>
+	<key>updateCheckerAtBoot</key>
+	<integer>0</integer>
+	<key>updateCheckerEnabled</key>
+	<integer>0</integer>
+</dict>
+</plist>
