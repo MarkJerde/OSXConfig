@@ -4,12 +4,14 @@
 <dict>
 	<key>Label</key>
 	<string>com.mark_a_jerde.termFocusMon</string>
+	<key>KeepAlive</key>
+	<true/>
 	<key>LimitLoadToSessionType</key>
 	<string>Aqua</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/bin/osascript</string>
-		<string>/Users/red/bin/termFocusMon.osa</string>
+		<string>/Users/markjerde/bin/termFocusMon.osa</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
