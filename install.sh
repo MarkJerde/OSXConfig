@@ -9,7 +9,7 @@ perl -e 'exit 0 if ('$(sw_vers -productVersion|sed 's/^\([0-9][0-9]*\.[0-9][0-9]
 ) ; do
 	echo Symbolic linking "$file"
 	mkdir -p $(dirname "$TO/$file")
-	ln -s "$FROM/$file" "$TO/$file"
+	ln -sf "$FROM/$file" "$TO/$file"
 	ls -l "$TO/$file"
 done
 
