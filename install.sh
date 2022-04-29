@@ -88,6 +88,17 @@ echo Turning off desktop icons.
 defaults write com.apple.finder CreateDesktop false
 killall Finder
 
+# Setup Touch ID sudo, because it is awesome.
+if grep -1 pam_tid.so /etc/pam.d/sudo
+then
+	echo Touch ID already enabled for sudo.
+else
+	echo Enable Touch ID for sudo.
+	sudo sed -i.bak '2 i\
+auth       sufficient     pam_tid.so
+' /etc/pam.d/sudo
+fi
+
 for file in $(
 perl -e 'exit 0 if ('$(sw_vers -productVersion|sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*/\1/')' < 10.9);exit 1;' ] && echo Library/LaunchAgents/com.mark_a_jerde.termFocusMon.plist # This isn't needed in OS X 10.9 or above, so only do this for 10.7 and less.
 perl -e 'exit 0 if ('$(sw_vers -productVersion|sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*/\1/')' < 10.10);exit 1;' ] && echo Library/Preferences/com.iSlayer.iStatMenusPreferences.plist # This version of iStatMenus doesn't work above OS X 10.10, so only do this for 10.7 and less.
