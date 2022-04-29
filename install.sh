@@ -165,5 +165,26 @@ plutil -convert xml1 -o - ~/Library/Preferences/com.apple.dt.Xcode.plist| sed 's
 mv ~/Library/Preferences/com.apple.dt.Xcode.plist.new ~/Library/Preferences/com.apple.dt.Xcode.plist
 defaults read ~/Library/Preferences/com.apple.dt.Xcode.plist
 
+echo "Configure Simulator"
+# Open and close Simulator to make sure the Preferences file we are going to modify exists.
+open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app
+while [ ! -e ~/Library/Preferences/com.apple.iphonesimulator.plist ]
+do
+	sleep 5
+	echo -n .
+done
+osascript -e 'tell application "Simulator" to quit'
+
+# Now make the changes:
+# In ~/Library/Preferences/com.apple.iphonesimulator.plist set
+# <key>PasteboardAutomaticSync</key> to <false/> to avoid bad pasteboard
+# reliability.
+prefixLineCount=$(plutil -convert xml1 -o - ~/Library/Preferences/com.apple.iphonesimulator.plist|sed -n '1,/<key>PasteboardAutomaticSync</ p'|wc -l|sed 's/[^0-9]//g')
+plutil -convert xml1 -o - ~/Library/Preferences/com.apple.iphonesimulator.plist|head -$prefixLineCount > ~/Library/Preferences/com.apple.iphonesimulator.plist.new
+echo "	<false/>" >> ~/Library/Preferences/com.apple.iphonesimulator.plist.new
+plutil -convert xml1 -o - ~/Library/Preferences/com.apple.iphonesimulator.plist|sed "1,$((prefixLineCount+1)) d" >> ~/Library/Preferences/com.apple.iphonesimulator.plist.new
+mv ~/Library/Preferences/com.apple.iphonesimulator.plist.new ~/Library/Preferences/com.apple.iphonesimulator.plist
+defaults read ~/Library/Preferences/com.apple.iphonesimulator.plist
+
 echo Done!
 
