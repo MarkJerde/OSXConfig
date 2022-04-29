@@ -123,6 +123,7 @@ echo Library/Developer/Xcode/UserData/FontAndColorThemes
 echo Library/Application Support/Flycut/com.generalarcade.flycut.plist
 echo Library/Preferences/com.apple.AppleMultitouchTrackpad.plist
 echo Library/Preferences/ByHost/com.apple.windowserver.HOST-UUID.plist
+echo Library/Preferences/-X95R6W2D.com.mark-a-jerde.Flycut-macOS.plist
 ) ; do
 	tofile="$(echo "$file"|sed 's/HOST-UUID/'"$hostUUID"'/')"
 	echo Symbolic linking "$file"
@@ -187,6 +188,19 @@ echo "	<false/>" >> ~/Library/Preferences/com.apple.iphonesimulator.plist.new
 plutil -convert xml1 -o - ~/Library/Preferences/com.apple.iphonesimulator.plist|sed "1,$((prefixLineCount+1)) d" >> ~/Library/Preferences/com.apple.iphonesimulator.plist.new
 mv ~/Library/Preferences/com.apple.iphonesimulator.plist.new ~/Library/Preferences/com.apple.iphonesimulator.plist
 defaults read ~/Library/Preferences/com.apple.iphonesimulator.plist
+
+if [ ! -d /Applications/Flycut.app ]
+then
+	echo Installing Flycut.
+	pushd ~/Downloads > /dev/null
+		curl -L https://github.com/MarkJerde/Flycut/releases/download/1.9.2/Flycut.app.zip -o Flycut.app.zip
+		unzip Flycut.app.zip
+		rm Flycut.app.zip
+		mv Flycut.app /Applications
+		osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Flycut.app", hidden:false}'
+		open /Applications/Flycut.app
+	popd > /dev/null
+fi
 
 echo Done!
 echo "Log Out to activate some of the configurations."
