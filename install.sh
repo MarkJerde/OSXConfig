@@ -1,5 +1,86 @@
 #!/bin/bash
-FROM=`pwd`
+
+# Create the Developer directory since a lot depends upon that, like the repo this script is from.
+if [ ! -d ~/Developer ]
+then
+	mkdir -p ~/Developer
+fi
+
+# Try to install Xcode if missing. It gives us git.
+if [ ! -d /Applications/Xcode.app ]
+then
+	# I have no idea why:
+	fakeGit=$(md5 $(which git))
+	# Clearly, I have not had to run this in three years. Yay.
+	xcodeDownloadFile=Xcode_10.2.1.xip
+	# Look for the file:
+	found=$(mdfind -name "$xcodeDownloadFile"|head -1)
+	if [ -f "$found" ]
+	then
+		echo "Installing Xcode"
+		# I suppose I should have made sure it wasn't already in Downloads, but this isn't rigged to fail the script on command failure so it's okay (for now).
+		cp "$found" ~/Downloads
+		# Launch the unpack:
+		open ~/Downloads/"$xcodeDownloadFile"
+		# Wait for it to complete: (smart would be to find a non-forking shell script command to unpack it)
+		while [ ! -d ~/Downloads/Xcode.app ]
+		do
+			sleep 5
+			echo -n .
+		done
+		echo
+		# Install it:
+		mv ~/Downloads/Xcode.app /Applications
+		# Launch it to install the commandline tools:
+		echo "Launching Xcode"
+		open /Applications/Xcode.app
+		echo "Maybe something like xcode-select -p can help detect when the tools are installed and ready?"
+		
+	else
+		echo "FAILED to install Xcode. Some settings will not be configured."
+	fi
+fi
+
+# Find out where the config is located:
+scriptDir="$(dirname "$0")"
+if grep -q "^\." <(echo "$scriptDir")
+then
+	# It's the current directory, so get an absolute path. Looks kind of gross and hacky, but the BSD utils are limited.
+	scriptDir=$(echo "$(pwd)/$scriptDir"|sed 's|/\./|/|;s|/\.$||')
+fi
+
+# Support OSXConfig being installed from just the script, without the support files, by installing the repo on this new account.
+# I suppose maybe we are using dirname on an absolute path in case of symlinks:
+if [ "$scriptDir" != "$(dirname ~/Developer/OSXConfig/install.sh)" ]
+then
+	echo "Bootstrapping OSXConfig."
+	# Setup the repo if missing:
+	if [ ! -d ~/Developer/OSXConfig ]
+	then
+		if [ ! -d /Applications/Xcode.app ]
+		then
+			# It's hard to git clone without git, and Xcode gives us git.
+			echo "Cannot bootstrap OSXConfig without Xcode installed."
+			exit -1
+		fi
+
+		# Clone (or copy if edited below):
+		echo "Downloading OSXConfig."
+		pushd ~/Developer > /dev/null
+			# This was once used when running off another drive:
+			#cp -a "/Volumes/Macintosh HDD/Users/mjerde/Developer/OSXConfig" "OSXConfig"
+			# But this is probably more correct unless trying to install from uncommitted changes:
+			git clone https://github.com/MarkJerde/OSXConfig.git
+		popd > /dev/null
+	fi
+
+	# Relaunch ourselves.
+	echo "Launching OSXConfig install."
+	~/Developer/OSXConfig/install.sh
+	exit
+fi
+
+FROM="$scriptDir"
 TO="$HOME"
 
 for file in $(
