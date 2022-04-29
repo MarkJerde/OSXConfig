@@ -128,7 +128,19 @@ echo Library/Application Support/Flycut/com.generalarcade.flycut.plist
 	echo "$file" | grep -q "\.plist$" && defaults read "$TO/$file" > /dev/null
 done
 
-plutil -convert xml1 -o - ~/Library/Preferences/com.apple.dt.Xcode.plist| sed 's/Default.xccolortheme/Dusk Big Black.xccolortheme/' > ~/Library/Preferences/com.apple.dt.Xcode.plist.new
+echo "Configure Xcode"
+# Open and close Xcode to make sure the Preferences file we are going to modify exists.
+open /Applications/Xcode.app
+while [ ! -e ~/Library/Preferences/com.apple.dt.Xcode.plist ]
+do
+	sleep 5
+	echo -n .
+done
+echo
+osascript -e 'tell application "Xcode" to quit'
+
+# Now make the changes:
+plutil -convert xml1 -o - ~/Library/Preferences/com.apple.dt.Xcode.plist| sed 's/Default.xccolortheme/Dusk Big Black.xccolortheme/;s/Default (Light).xccolortheme/Dusk Big Black.xccolortheme/' > ~/Library/Preferences/com.apple.dt.Xcode.plist.new
 mv ~/Library/Preferences/com.apple.dt.Xcode.plist.new ~/Library/Preferences/com.apple.dt.Xcode.plist
 defaults read ~/Library/Preferences/com.apple.dt.Xcode.plist
 
