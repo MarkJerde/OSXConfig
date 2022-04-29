@@ -83,6 +83,11 @@ fi
 FROM="$scriptDir"
 TO="$HOME"
 
+# Turn off desktop icons because I don't believe in Desktop files. Just remember that if there are tens of thousands of files in ~/Desktop and this setting gets lost the computer won't be usable anymore until you figure out how to fix it. Maybe I shouldn't treat Desktop like a file dump quite so much.
+echo Turning off desktop icons.
+defaults write com.apple.finder CreateDesktop false
+killall Finder
+
 for file in $(
 perl -e 'exit 0 if ('$(sw_vers -productVersion|sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*/\1/')' < 10.9);exit 1;' ] && echo Library/LaunchAgents/com.mark_a_jerde.termFocusMon.plist # This isn't needed in OS X 10.9 or above, so only do this for 10.7 and less.
 perl -e 'exit 0 if ('$(sw_vers -productVersion|sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*/\1/')' < 10.10);exit 1;' ] && echo Library/Preferences/com.iSlayer.iStatMenusPreferences.plist # This version of iStatMenus doesn't work above OS X 10.10, so only do this for 10.7 and less.
