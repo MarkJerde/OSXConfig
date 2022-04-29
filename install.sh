@@ -113,6 +113,7 @@ end tell'
 	read
 fi
 
+hostUUID=$(ls Library/Preferences/ByHost/|sed 's/\.plist$//;s/.*\.//'|sort|uniq -c|sort -n|tail -1|sed 's/^ *[0-9][0-9]* *//')
 for file in $(
 perl -e 'exit 0 if ('$(sw_vers -productVersion|sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*/\1/')' < 10.9);exit 1;' ] && echo Library/LaunchAgents/com.mark_a_jerde.termFocusMon.plist # This isn't needed in OS X 10.9 or above, so only do this for 10.7 and less.
 perl -e 'exit 0 if ('$(sw_vers -productVersion|sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*/\1/')' < 10.10);exit 1;' ] && echo Library/Preferences/com.iSlayer.iStatMenusPreferences.plist # This version of iStatMenus doesn't work above OS X 10.10, so only do this for 10.7 and less.
@@ -121,11 +122,12 @@ perl -e 'exit 0 if ('$(sw_vers -productVersion|sed 's/^\([0-9][0-9]*\.[0-9][0-9]
 echo Library/Developer/Xcode/UserData/FontAndColorThemes
 echo Library/Application Support/Flycut/com.generalarcade.flycut.plist
 ) ; do
+	tofile="$(echo "$file"|sed 's/HOST-UUID/'"$hostUUID"'/')"
 	echo Symbolic linking "$file"
-	mkdir -p $(dirname "$TO/$file")
-	ln -sf "$FROM/$file" "$TO/$file"
-	ls -l "$TO/$file"
-	echo "$file" | grep -q "\.plist$" && defaults read "$TO/$file" > /dev/null
+	mkdir -p $(dirname "$TO/$tofile")
+	ln -sf "$FROM/$file" "$TO/$tofile"
+	ls -l "$TO/$tofile"
+	echo "$file" | grep -q "\.plist$" && defaults read "$TO/$tofile" > /dev/null
 done
 
 echo "Configure Xcode"
