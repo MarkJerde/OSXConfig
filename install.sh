@@ -187,4 +187,5 @@ mv ~/Library/Preferences/com.apple.iphonesimulator.plist.new ~/Library/Preferenc
 defaults read ~/Library/Preferences/com.apple.iphonesimulator.plist
 
 echo Done!
+echo "Log Out to activate some of the configurations."
 
