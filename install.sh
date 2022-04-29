@@ -99,6 +99,20 @@ auth       sufficient     pam_tid.so
 ' /etc/pam.d/sudo
 fi
 
+# Ensure Terminal has Full Disk Access.
+if md5 /var/db/kcm-dump.uuid
+then
+	echo Full Disk Access detected.
+else
+	echo "Please add Terminal to Full Disk Access and press return."
+osascript -e 'tell application "System Preferences"
+set securityPane to pane id "com.apple.preference.security"
+tell securityPane to reveal anchor "Privacy_Accessibility"
+activate
+end tell'
+	read
+fi
+
 for file in $(
 perl -e 'exit 0 if ('$(sw_vers -productVersion|sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*/\1/')' < 10.9);exit 1;' ] && echo Library/LaunchAgents/com.mark_a_jerde.termFocusMon.plist # This isn't needed in OS X 10.9 or above, so only do this for 10.7 and less.
 perl -e 'exit 0 if ('$(sw_vers -productVersion|sed 's/^\([0-9][0-9]*\.[0-9][0-9]*\).*/\1/')' < 10.10);exit 1;' ] && echo Library/Preferences/com.iSlayer.iStatMenusPreferences.plist # This version of iStatMenus doesn't work above OS X 10.10, so only do this for 10.7 and less.
