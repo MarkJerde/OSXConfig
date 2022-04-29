@@ -130,6 +130,25 @@ echo Library/Application Support/Flycut/com.generalarcade.flycut.plist
 	echo "$file" | grep -q "\.plist$" && defaults read "$TO/$tofile" > /dev/null
 done
 
+echo "Configure Hot Corners"
+plist=~/Library/Preferences/com.apple.dock.plist
+if ! plutil -convert xml1 -o - "$plist" | grep -e wvous-bl-corner -e wvous-tr-corner
+then
+	prefixLineCount=$(plutil -convert xml1 -o - "$plist"|sed -p '/<\/dict>/,$ d'|wc -l|sed 's/[^0-9]//g')
+	plutil -convert xml1 -o - "$plist"|head -$prefixLineCount > "$plist".new
+	echo "	<key>wvous-bl-corner</key>
+	<integer>5</integer>
+	<key>wvous-bl-modifier</key>
+	<integer>0</integer>
+	<key>wvous-tr-corner</key>
+	<integer>6</integer>
+	<key>wvous-tr-modifier</key>
+	<integer>0</integer>" >> "$plist".new
+	plutil -convert xml1 -o - "$plist"|sed "1,$((prefixLineCount)) d" >> "$plist".new
+	mv "$plist".new "$plist"
+	defaults read "$plist"
+fi
+
 echo "Configure Xcode"
 # Open and close Xcode to make sure the Preferences file we are going to modify exists.
 open /Applications/Xcode.app
