@@ -122,6 +122,7 @@ perl -e 'exit 0 if ('$(sw_vers -productVersion|sed 's/^\([0-9][0-9]*\.[0-9][0-9]
 echo Library/Developer/Xcode/UserData/FontAndColorThemes
 echo Library/Application Support/Flycut/com.generalarcade.flycut.plist
 echo Library/Preferences/com.apple.AppleMultitouchTrackpad.plist
+echo Library/Preferences/ByHost/com.apple.windowserver.HOST-UUID.plist
 ) ; do
 	tofile="$(echo "$file"|sed 's/HOST-UUID/'"$hostUUID"'/')"
 	echo Symbolic linking "$file"
