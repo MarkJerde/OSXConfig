@@ -124,6 +124,7 @@ echo Library/Application Support/Flycut/com.generalarcade.flycut.plist
 echo Library/Preferences/com.apple.AppleMultitouchTrackpad.plist
 echo Library/Preferences/ByHost/com.apple.windowserver.HOST-UUID.plist
 echo Library/Preferences/-X95R6W2D.com.mark-a-jerde.Flycut-macOS.plist
+echo Library/Preferences/com.apple.universalaccess.plist
 ) ; do
 	tofile="$(echo "$file"|sed 's/HOST-UUID/'"$hostUUID"'/')"
 	echo Symbolic linking "$file"
